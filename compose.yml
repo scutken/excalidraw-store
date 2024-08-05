@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  excalidraw-store:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "23002:23002"
+    environment:
+      NODE_ENV: production
+    volumes:
+      - .:/app
+    command: yarn start
